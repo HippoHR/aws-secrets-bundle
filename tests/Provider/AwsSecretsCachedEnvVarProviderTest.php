@@ -28,7 +28,7 @@ class AwsSecretsCachedEnvVarProviderTest extends TestCase
         );
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_cached_item_if_hit(): void
     {
         $cacheItem = $this->prophesize(CacheItemInterface::class);
@@ -42,7 +42,7 @@ class AwsSecretsCachedEnvVarProviderTest extends TestCase
         $this->assertEquals('value', $result);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_sets_cache_item_and_returns_decorated_value_on_no_hit(): void
     {
         $cacheItem = $this->prophesize(CacheItemInterface::class);

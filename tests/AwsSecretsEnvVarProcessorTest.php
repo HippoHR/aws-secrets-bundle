@@ -29,9 +29,7 @@ class AwsSecretsEnvVarProcessorTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_calls_closure_if_ignore(): void
     {
         $this->processor->setIgnore(true);
@@ -50,9 +48,8 @@ class AwsSecretsEnvVarProcessorTest extends TestCase
         $this->assertEquals('value', $result);
     }
 
-    /**
-     * @test
-     */
+
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_string_for_key(): void
     {
         $this->provider->get('prefix/db')->willReturn('{"key":"value"}');
@@ -73,9 +70,7 @@ class AwsSecretsEnvVarProcessorTest extends TestCase
         $this->assertEquals('value', $value);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_string(): void
     {
         $callCount = 0;

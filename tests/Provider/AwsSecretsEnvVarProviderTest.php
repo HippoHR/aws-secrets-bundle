@@ -21,7 +21,7 @@ class AwsSecretsEnvVarProviderTest extends TestCase
         $this->provider = new AwsSecretsEnvVarProvider($this->secretsManagerClient->reveal());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_gets_value_from_secrets_manager(): void
     {
         $result = $this->prophesize(Result::class);

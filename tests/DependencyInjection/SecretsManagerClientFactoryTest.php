@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class SecretsManagerClientFactoryTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_exception_when_no_secret_but_key_provided(): void
     {
         $this->expectExceptionMessage('Both key and secret must be provided or neither');
@@ -22,7 +22,7 @@ class SecretsManagerClientFactoryTest extends TestCase
         );
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_exception_when_no_key_but_secret_provided(): void
     {
         $this->expectExceptionMessage('Both key and secret must be provided or neither');
@@ -36,7 +36,7 @@ class SecretsManagerClientFactoryTest extends TestCase
         );
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_builds_client_without_key_or_secret(): void
     {
         $factory = new SecretsManagerClientFactory();
@@ -50,7 +50,7 @@ class SecretsManagerClientFactoryTest extends TestCase
         $this->assertInstanceOf(SecretsManagerClient::class, $client);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_builds_client_with_key_and_secret(): void
     {
         $factory = new SecretsManagerClientFactory();
@@ -64,7 +64,7 @@ class SecretsManagerClientFactoryTest extends TestCase
         $this->assertInstanceOf(SecretsManagerClient::class, $client);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_builds_client_with_endpoint(): void
     {
         $factory = new SecretsManagerClientFactory();

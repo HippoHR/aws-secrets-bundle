@@ -22,7 +22,7 @@ class AwsSecretsArrayEnvVarProviderTest extends TestCase
         $this->provider = new AwsSecretsArrayEnvVarProvider($this->decorated->reveal());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_decorated_value(): void
     {
         $this->decorated->get('key')->shouldBeCalledTimes(1)->willReturn('value');
@@ -30,7 +30,7 @@ class AwsSecretsArrayEnvVarProviderTest extends TestCase
         $this->assertEquals('value', $result);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_cached_value_on_second_call(): void
     {
         $this->decorated->get('key')->shouldBeCalledTimes(1)->willReturn('value');
